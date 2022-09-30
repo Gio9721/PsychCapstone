@@ -21,13 +21,12 @@ class UsersTableSeeder extends Seeder
         $councilourRole = Role::where('name', 'councilour') -> first();
         $studentRole = Role::where('name', 'student') -> first();
         $userRole = Role::where('name', 'user') -> first();
-        
+
         $admin = User::create([
             'idnum' => '11111111',
             'fname' => 'Admin',
             'mname' => 'Ad',
             'lname' => 'Admin',
-            'course' => 'admin',
             'year' => '5',
             'email' => 'admin@admin.com',
             'password' => bcrypt ('admin')
@@ -38,19 +37,18 @@ class UsersTableSeeder extends Seeder
             'fname' => 'Councilour',
             'mname' => 'Co',
             'lname' => 'Councilour',
-            'course' => 'councilour',
             'year' => '5',
             'email' => 'councilour@councilour.com',
             'password' => bcrypt ('councilour')
-            
+
         ]);
 
         $student = User::create([
             'idnum' => '33333333',
+            'course_id' => '1',
             'fname' => 'Student',
             'mname' => 'St',
             'lname' => 'Student',
-            'course' => 'student',
             'year' => '5',
             'email' => 'student@student.com',
             'password' => bcrypt ('student')
@@ -61,7 +59,6 @@ class UsersTableSeeder extends Seeder
             'fname' => 'User',
             'mname' => 'Us',
             'lname' => 'User',
-            'course' => 'user',
             'year' => '5',
             'email' => 'user@user.com',
             'password' => bcrypt ('user')
@@ -72,7 +69,6 @@ class UsersTableSeeder extends Seeder
             'fname' => 'Kyle Christian',
             'mname' => 'Misa',
             'lname' => 'Arches',
-            'course' => 'ICT',
             'year' => '4',
             'email' => 'kurumitokisaki0324@gmail.com',
             'password' => bcrypt ('Kurumitokisaki')

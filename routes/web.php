@@ -100,7 +100,14 @@ Route::get('/addcouncilor', function(){
 Route::get('/addcourse', function(){
     return view('admin.users.addcourse');
 });
+Route::get('/course', function(){
+    return view('admin.users.course');
+});
 
+Route::get('/dash', function(){
+    return view('admin.users.dash');
+});
+Route::resource('course', CourseController::class);
 Route::resource('user', Admin\UserController::class);
 
 Auth::routes();
@@ -130,7 +137,7 @@ Route::resource('/listofstudent', 'Councilour\ListofStudents', ['except' => ['sh
 Route::get('/viewtime', 'Councilour\Appointmentlist@index')->name('viewtime');
 Route::post('/viewtime', 'Councilour\Appointmentlist@done')->name('viewtime');
 Route::get('/viewquestions', 'Councilour\QuestionController@index')->name('viewquestions');
-Route::get('/listofapprovedappointments', 'Myapprovedappointments@index')->name('listofapprovedappointments');
+// Route::get('/listofapprovedappointments', 'Myapprovedappointments@index')->name('listofapprovedappointments');
 Route::get('/change-status/{id}', 'Councilour\Appointmentlist@status')->name('changestatus');
 Route::post('/viewquestions', 'Councilour\QuestionController@create')->name('viewquestions');
 Route::delete('/question-delete/{id}', 'Councilour\QuestionController@destroy');

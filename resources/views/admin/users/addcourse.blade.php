@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="formcard col-8">
                     <div class="card-body">
-                        <form method="PUT" id="addaccount" action="{{ route('user.create')}}">
+                        <form method="PUT" id="addaccount" action="{{ route('course.create')}}">
                                                 @csrf
                         <div class="row g-3 align-items-center">
                             <div class="input-group mb-3">

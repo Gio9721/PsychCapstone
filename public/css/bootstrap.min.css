@@ -2669,13 +2669,13 @@ tbody.collapse.show{
 	background:no-repeat center center;
 	background-size:100% 100%
 }
-@media (max-width:575px){
+@media (max-width:100%){
 	.navbar-expand-sm>.container,.navbar-expand-sm>.container-fluid{
 		padding-right:0;
 		padding-left:0
 }
 }
-@media (min-width:576px){
+@media (min-width:100%){
 	.navbar-expand-sm{
 		-ms-flex-direction:row;
 		flex-direction:row;
