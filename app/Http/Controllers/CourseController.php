@@ -38,7 +38,7 @@ class CourseController extends Controller
 
         ]);
 
-        return redirect()->route('course.index')->with('completed', 'Course has been saved!');
+        return redirect()->route('course.index')->with('message', 'Course has been saved!');
     }
 
     /**

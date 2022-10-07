@@ -6,10 +6,11 @@
         <header>
             <a href="#" class="logo">Manage Accounts</a>
             <ul>
-            <li><a href="{{ route('admin.users.index') }}">Home</a></li>
-            <li><a href="{{ url('addstudent') }}">Add Student</a></li>
-            <li><a href="{{ url('addcouncilor') }}">Add Councilor</a></li>
-            <li><a href="{{ url('addcourse') }}">Add Course</a></li>
+                <li><a href="{{ route('admin.users.index') }}">Home</a></li>
+                <li><a href="{{ url('addstudent') }}">Add Student</a></li>
+                <li><a href="{{ url('addcouncilor') }}">Add Councilor</a></li>
+                <li><a href="{{ url('addcourse') }}">Add Course</a></li>
+                <li><a href="{{ url('course') }}">Course</a></li>
             <li>
                 <input type="text" id="search"class="form-control" placeholder="search" style="width: 15rem"/>
             </li>
@@ -41,22 +42,16 @@
                                         <td>{{ $user->lname }}</td>
                                         <td>{{ $user->fname }}</td>
                                         <td>{{ $user->course }}</td>
-                                        {{-- <td>
-                                            <a href="{{ route('admin.users.edit', $user->id) }}" class="float-left">
-                                                <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                                        </td> --}}
                                         <td>
-                                            {{-- <a href="{{ route('admin.impersonate', $user->id) }}" class="float-left"> --}}
-                                                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-id="{{$user->id}}" data-bs-target="#viewModal">
-                                                    <i class="fa fa-eye"></i>
-                                                </button>
-                                            {{-- </a> --}}
+                                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-id="{{$user->id}}" data-bs-target="#viewModal">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
                                         </td>
                                         <td>
                                             <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="float-left">
                                                 {{ method_field('DELETE') }}
-                                                @csrf
-                                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                                                    @csrf
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fa fa-trash-o"></i></button>
                                             </form>
                                         </td>
                                         </tr>
@@ -66,8 +61,11 @@
                         </div>
                     </div>
             </div>
+            <div class="modal fade">
 
-            <!-- Modal -->
+            </div>
+
+            <!-- View & Edit Modal -->
             <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-xl">
                 <div class="modal-content">

@@ -10,6 +10,7 @@
                 <li><a href="{{ url('addstudent') }}">Add Student</a></li>
                 <li><a href="{{ url('addcouncilor') }}">Add Councilor</a></li>
                 <li><a href="{{ url('addcourse') }}">Add Course</a></li>
+                <li><a href="{{ url('course') }}">Course</a></li>
             </ul>
         </header>
         @include('partials.alerts')
@@ -31,6 +32,9 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Last Name</span>
                                     <input type="text" id="lname" name="lname" placeholder="Last Name" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="text" id="role_name" name="role_name" value="councilor" class="form-control" hidden>
                                 </div>
                             </div>
                             <div class="col-4 col-sm-6">

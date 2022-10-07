@@ -10,6 +10,7 @@
                 <li><a href="{{ url('addstudent') }}">Add Student</a></li>
                 <li><a href="{{ url('addcouncilor') }}">Add Councilor</a></li>
                 <li><a href="{{ url('addcourse') }}">Add Course</a></li>
+                <li><a href="{{ url('course') }}">Course</a></li>
             </ul>
         </header>
         @include('partials.alerts')

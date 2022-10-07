@@ -6,10 +6,11 @@
         <header>
             <a href="#" class="logo">Manage Accounts</a>
             <ul>
-            <li><a href="{{ route('admin.users.index') }}">Home</a></li>
-            <li><a href="{{ url('addstudent') }}">Add Student</a></li>
-            <li><a href="{{ url('addcouncilor') }}">Add Councilor</a></li>
-            <li><a href="{{ url('addcourse') }}">Add Course</a></li>
+                <li><a href="{{ route('admin.users.index') }}">Home</a></li>
+                <li><a href="{{ url('addstudent') }}">Add Student</a></li>
+                <li><a href="{{ url('addcouncilor') }}">Add Councilor</a></li>
+                <li><a href="{{ url('addcourse') }}">Add Course</a></li>
+                <li><a href="{{ url('course') }}">Course</a></li>
             <li>
                 <input type="text" id="search"class="form-control" placeholder="search" style="width: 15rem"/>
             </li>
@@ -41,7 +42,7 @@
                                             <form action="{{ route('course.destroy', $courses->id) }}" method="POST" class="float-left">
                                                 {{ method_field('DELETE') }}
                                                 @csrf
-                                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fa fa-trash-o"></i></button>
                                             </form>
                                         </td>
                                         </tr>
