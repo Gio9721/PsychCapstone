@@ -5,6 +5,7 @@
         <header>
             <a href="#" class="logo">Manage Accounts</a>
             <ul>
+                <li><a href="{{ route('home') }}">Dashboard</a></li>
                 <li><a href="{{ route('admin.users.index') }}">Home</a></li>
                 <li><a href="{{ url('addstudent') }}">Add Student</a></li>
                 <li><a href="{{ url('addcouncilor') }}">Add Councilor</a></li>
@@ -19,31 +20,31 @@
             <div class="container text-center">
                 <div class="row justify-content-center mt-5 pt-5">
                     <div class="col-4">
-                        <div class="card border-info text-center mb-3" style="max-width: 25rem;">
-                            <div class="card-header text-primary">
+                        <div class="card border-info bg-info text-center mb-3" style="max-width: 25rem;">
+                            <div class="card-header text-success">
                                 <h3>Accounts</h3>
                             </div>
-                            <div class="card-body text-primary">
+                            <div class="card-body text-white">
                               <h1>{{$nousers}}</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card border-info text-center mb-3" style="max-width: 25rem;">
-                            <div class="card-header text-primary">
+                        <div class="card border-info bg-info text-center mb-3" style="max-width: 25rem;">
+                            <div class="card-header text-success">
                                 <h3>Courses</h3>
                             </div>
-                            <div class="card-body text-primary">
+                            <div class="card-body text-white">
                               <h1>{{$numcourses}}</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card border-info text-center mb-3" style="max-width: 25rem;">
-                            <div class="card-header text-primary">
+                        <div class="card border-info bg-info text-center mb-3" style="max-width: 25rem;">
+                            <div class="card-header text-success">
                                 <h3>Approved Appointments</h3>
                             </div>
-                            <div class="card-body text-primary">
+                            <div class="card-body text-white">
                               <h1>{{$appointments}}</h5>
                             </div>
                         </div>

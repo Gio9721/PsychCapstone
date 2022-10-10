@@ -6,6 +6,7 @@
         <header>
             <a href="#" class="logo">Manage Accounts</a>
             <ul>
+                <li><a href="{{ route('home') }}">Dashboard</a></li>
                 <li><a href="{{ route('admin.users.index') }}">Home</a></li>
                 <li><a href="{{ url('addstudent') }}">Add Student</a></li>
                 <li><a href="{{ url('addcouncilor') }}">Add Councilor</a></li>
