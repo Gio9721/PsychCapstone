@@ -4,14 +4,32 @@
 <section>
     <div id="app">
         <header>
-            <a href="#" class="logo">Add Student</a>
+            <a href="#" class="logo">Manage Accounts</a>
             <ul>
                 <li><a href="{{ route('home') }}">Dashboard</a></li>
-                <li><a href="{{ route('admin.users.index') }}">Home</a></li>
-                <li><a href="{{ url('addstudent') }}">Add Student</a></li>
-                <li><a href="{{ url('addcouncilor') }}">Add Councilor</a></li>
-                <li><a href="{{ url('addcourse') }}">Add Course</a></li>
-                <li><a href="{{ url('course') }}">Course</a></li>
+                <li>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Manage Accounts
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('admin.users.index') }}">List of Accounts</a>
+                            <a class="dropdown-item" href="{{ url('addcouncilor') }}">Add Councilor</a>
+                          <a class="dropdown-item" href="{{ url('addstudent') }}">Add Student</a>
+                        </div>
+                      </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Manage Course
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="{{ url('course') }}">List of Courses</a>
+                          <a class="dropdown-item" href="{{ url('addcourse') }}">Add Course</a>
+                        </div>
+                      </div>
+                </li>
             </ul>
         </header>
         @include('partials.alerts')
