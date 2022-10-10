@@ -45,10 +45,6 @@
         {{-- New Start Navbar --}}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <a class="navbar-brand" href="#">Hidden brand</a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
@@ -81,7 +77,6 @@
                             </div>
                         </li>
                 </ul>
-              </div>
             </div>
           </nav>
 
@@ -98,27 +93,27 @@
                                     <h3>Accounts</h3>
                                 </div>
                                 <div class="card-body text-primary">
-                                  <h1>{{$numusers}}</h5>
+                                  <h1>5</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card border-info text-center mb-3" style="max-width: 18rem;">
                                 <div class="card-header text-primary">
-                                    <h3>Courses</h3>
+                                    <h3>Accounts</h3>
                                 </div>
                                 <div class="card-body text-primary">
-                                  <h1>{{$numcourses}}</h5>
+                                  <h1>5</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card border-info text-center mb-3" style="max-width: 18rem;">
                                 <div class="card-header text-primary">
-                                    <h3>Approved Appointments</h3>
+                                    <h3>Accounts</h3>
                                 </div>
                                 <div class="card-body text-primary">
-                                  <h1>{{$appointments}}</h5>
+                                  <h1>5</h5>
                                 </div>
                             </div>
                         </div>
