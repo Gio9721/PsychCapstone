@@ -14,7 +14,7 @@ class CoursesTableSeeder extends Seeder
     {
         DB::table('courses')->insert([
             'course_name' => 'Bachelor of Science Information Communication and Technology(BS_ICT)',
-            'department' => 'School of Arts and Sciences(SAS)',
+            'dept_id' => '1',
         ]);
     }
 }
