@@ -128,8 +128,6 @@ Route::get('/impersonate/user/{id}', 'ImpersonateController@index')->name('imper
 });
 Route::get('/admin/impersonate/destroy', 'Admin\ImpersonateController@destroy')->name('admin.impersonate.destroy');
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/index','HomeController@adminregister')->name('adminregister');
 
 //Counselour//
 Route::resource('/questions','Councilour\QuestionController', ['except' => ['show', 'edit', 'update']]);
@@ -137,12 +135,11 @@ Route::resource('/listofstudent', 'Councilour\ListofStudents', ['except' => ['sh
 Route::get('/viewtime', 'Councilour\Appointmentlist@index')->name('viewtime');
 Route::post('/viewtime', 'Councilour\Appointmentlist@done')->name('viewtime');
 Route::get('/viewquestions', 'Councilour\QuestionController@index')->name('viewquestions');
-// Route::get('/listofapprovedappointments', 'Myapprovedappointments@index')->name('listofapprovedappointments');
 Route::get('/change-status/{id}', 'Councilour\Appointmentlist@status')->name('changestatus');
 Route::post('/viewquestions', 'Councilour\QuestionController@create')->name('viewquestions');
 Route::delete('/question-delete/{id}', 'Councilour\QuestionController@destroy');
 Route::get('/myfinishappointments', 'Councilour\Appointmentlist@finishappointments')->name('myfinishappointments');
-Route::get('/home', 'Councilour\Appointmentlist@percentage')->name('home');
+// Route::get('/home', 'Councilour\Appointmentlist@percentage')->name('home');
 
 //Student//
 Route::post('/stdntappointment', 'Councilour\Appointmentlist@store')->name('stdntappointment');

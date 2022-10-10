@@ -166,6 +166,5 @@
                     });
                 });
             </script>
-        </main>
     </div>
 @endsection
