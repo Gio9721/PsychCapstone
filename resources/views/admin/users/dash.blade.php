@@ -90,91 +90,38 @@
             <section>
             <div id="app">
                 @include('partials.alerts')
-                <div class="container">
+                <div class="container text-center">
                     <div class="row justify-content-center">
-                        <div class="card text-center">
-                            <div class="card-header">
-                              <ul class="nav nav-pills card-header-pills">
-                                <li class="nav-item">
-                                  <a type="button" class="btn btn-info" href="{{ url('addstudent') }}">Add Student</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a type="button" class="btn btn-info" href="{{ url('addcouncilor') }}">Add Councilor</a>
-                                </li>
-                              </ul>
+                        <div class="col-4">
+                            <div class="card border-info text-center mb-3" style="max-width: 18rem;">
+                                <div class="card-header text-primary">
+                                    <h3>Accounts</h3>
+                                </div>
+                                <div class="card-body text-primary">
+                                  <h1>{{$numusers}}</h5>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <form method="PUT" id="addaccount" action="{{ route('user.create')}}">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-8 col-sm-6">
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">First Name</span>
-                                                <input type="text" id="fname" name="fname" placeholder="First Name" class="form-control">
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">Middle Name</span>
-                                                <input type="text" id="fname" name="mname" placeholder="Middle Name" class="form-control">
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">Last Name</span>
-                                                <input type="text" id="lname" name="lname" placeholder="Last Name" class="form-control">
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="course" >{{ __('Course') }}</label>
-                                                    <select class="form-select" id="course" name="course">
-                                                        <option>Choose...</option>
-                                                        <optgroup label="Bachelor of Science">
-                                                                <option value="IT">Information Technology(IT)</option>
-                                                                <option value="ICT">Information and Communication Technologies(ICT)</option>
-                                                                <option value="CS">Computer Science(CS)</option>
-                                                                <option value="IE">Industrial Engineering(IE)</option>
-                                                                <option value="CE">Computer Engineering(CE)</option>
-                                                        </optgroup>
-                                                        <optgroup label="Engineerings">
-                                                            <option value="comp">Computer</option>
-                                                            <option value="gols">Gols</option>
-                                                            <option value="ind">Industrial</option>
-                                                        </optgroup>
-                                                    </select>
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="year" >{{ __('Year') }}</label>
-                                                    <select class="form-select" id="year" name="year">
-                                                        <option value="1">1st Year</option>
-                                                        <option value="2">2nd Year</option>
-                                                        <option value="3">3rd Year</option>
-                                                        <option value="4">4th Year</option>
-                                                    </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-4 col-sm-6">
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">ID Number</span>
-                                                <input type="text" id="idnum" name="idnum" placeholder="ID Number" class="form-control">
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">Email</span>
-                                                <input type="text" id="email" name="email" placeholder="Email" class="form-control">
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">Password</span>
-                                                <input type="text" id="password" name="password" placeholder="Passwword" class="form-control">
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">Confirm Password</span>
-                                                <input type="text" id="password-confirm" name="password-confirm" placeholder="Confirm Password" class="form-control">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary" form="addaccount">Submit Account</button>
-
-                                    </div>
-                                </form>
+                        </div>
+                        <div class="col-4">
+                            <div class="card border-info text-center mb-3" style="max-width: 18rem;">
+                                <div class="card-header text-primary">
+                                    <h3>Courses</h3>
+                                </div>
+                                <div class="card-body text-primary">
+                                  <h1>{{$numcourses}}</h5>
+                                </div>
                             </div>
-                          </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card border-info text-center mb-3" style="max-width: 18rem;">
+                                <div class="card-header text-primary">
+                                    <h3>Approved Appointments</h3>
+                                </div>
+                                <div class="card-body text-primary">
+                                  <h1>{{$appointments}}</h5>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
