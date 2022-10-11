@@ -42,6 +42,7 @@
                             <div class="col-8 col-sm-6">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">First Name</span>
+                                    <input type="text" id="fname" name="fname" value="First Name" class="form-control">
                                     <input type="text" id="fname" name="fname" placeholder="First Name" class="form-control">
                                 </div>
                                 <div class="input-group mb-3">
@@ -55,28 +56,20 @@
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="course" >{{ __('Course') }}</label>
                                         <select class="form-select" id="course" name="course">
-                                            <option>Choose...</option>
-                                            <optgroup label="Bachelor of Science">
-                                                    <option value="IT">Information Technology(IT)</option>
-                                                    <option value="ICT">Information and Communication Technologies(ICT)</option>
-                                                    <option value="CS">Computer Science(CS)</option>
-                                                    <option value="IE">Industrial Engineering(IE)</option>
-                                                    <option value="CE">Computer Engineering(CE)</option>
-                                            </optgroup>
-                                            <optgroup label="Engineerings">
-                                                <option value="comp">Computer</option>
-                                                <option value="gols">Gols</option>
-                                                <option value="ind">Industrial</option>
-                                            </optgroup>
+                                            <option>Choose Course</option>
+                                            @foreach ($course as $courses)
+                                                <option value="{{$courses->id}}">{{$courses->course_name}}</option>
+                                            @endforeach
                                         </select>
                                 </div>
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="year" >{{ __('Year') }}</label>
                                         <select class="form-select" id="year" name="year">
-                                            <option value="1">1st Year</option>
-                                            <option value="2">2nd Year</option>
-                                            <option value="3">3rd Year</option>
-                                            <option value="4">4th Year</option>
+                                            <option value="1st Year">1st Year</option>
+                                            <option value="2nd Year">2nd Year</option>
+                                            <option value="3rd Year">3rd Year</option>
+                                            <option value="4th Year">4th Year</option>
+                                            <option value="4th Year">5th Year</option>
                                         </select>
                                 </div>
                             </div>

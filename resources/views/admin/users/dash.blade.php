@@ -43,42 +43,66 @@
     <div id="app">
 
         {{-- New Start Navbar --}}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Hidden brand</a>
+              <a class="navbar-brand" href="#">USC</a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a href="{{ route('admin.users.index') }}">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Dashboard</a>
                   </li>
-                  <li class="nav-item">
-                    <a href="{{ url('addstudent') }}">Add Account</a>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Manage Accounts
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{{ route('admin.users.index') }}">List of Accounts</a></li>
+                      <li><a class="dropdown-item" href="{{ url('addcouncilor') }}">Add Councilor</a></li>
+                      <li><a class="dropdown-item" href="{{ url('addstudent') }}">Add Student</a></li>
+                    </ul>
                   </li>
-                  <li class="nav-item">
-                    <a href="{{ url('course') }}">Course</a>
+                  <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle"
+                       data-bs-toggle="dropdown"
+                       role="button" aria-expanded="false">LoginPage</a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item ">
+                           <a href="" class="dropdown-item">Bootstrap</a>
+                        </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Manage Courses
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ url('course') }}">List of Courses</a></li>
+                        <li><a class="dropdown-item" href="{{ url('addcourse') }}">Add Course</a></li>
+                    </ul>
                   </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto d-flex">
                     <!-- Authentication Links -->
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->fname }} <span class="caret"></span>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->fname }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </div>
           </nav>
+
 
 
         <main class="py-4">

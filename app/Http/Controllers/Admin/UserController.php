@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Role;
+use App\Course;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -19,10 +20,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+        $courses = Course::all();
         $numusers = User::count();
-        $userid = User::sum('year');
-        $ave = User::avg('year');
-        return view('admin.users.index', compact('users', 'numusers', 'userid', 'ave'));
+        return view('admin.users.index', compact('users', 'numusers', 'courses'));
 
 }
 

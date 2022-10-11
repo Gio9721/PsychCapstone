@@ -44,8 +44,13 @@
                                 <input type="text" id="course_name" name="course_name" placeholder="Course Name" class="form-control" required>
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Department of Course</span>
-                                <input type="text" id="department" name="department" placeholder="Course Department" class="form-control" required>
+                                <label class="input-group-text" for="dept_id" >Department</label>
+                                        <select class="form-select" id="dept_id" name="dept_id">
+                                            <option>Choose Department</option>
+                                            @foreach ($depts as $dept)
+                                                <option value="{{$dept->id}}">{{$dept->name}}</option>
+                                            @endforeach
+                                        </select>
                             </div>
                         </div>
                         <div class="modal-footer">

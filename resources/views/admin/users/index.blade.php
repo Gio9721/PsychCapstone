@@ -133,19 +133,10 @@
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="course" >{{ __('Course') }}</label>
                                         <select class="form-select" id="course" name="course">
-                                            <option>{{$user->course}}</option>
-                                            <optgroup label="Bachelor of Science">
-                                                    <option value="IT">Information Technology(IT)</option>
-                                                    <option value="ICT">Information and Communication Technologies(ICT)</option>
-                                                    <option value="CS">Computer Science(CS)</option>
-                                                    <option value="IE">Industrial Engineering(IE)</option>
-                                                    <option value="CE">Computer Engineering(CE)</option>
-                                            </optgroup>
-                                            <optgroup label="Engineerings">
-                                                <option value="comp">Computer</option>
-                                                <option value="gols">Gols</option>
-                                                <option value="ind">Industrial</option>
-                                            </optgroup>
+                                            <option value="{{$user->course_id}}">{{$user->course_id == $courses->course_name}}</option>
+                                            @foreach ($courses as $course)
+                                            <option value="{{$course->id}}">{{$course->course_name}}</option>
+                                            @endforeach
                                         </select>
                             </div>
                         </div>

@@ -29,15 +29,19 @@ class CourseController extends Controller
     {
         $request->validate([
             'course_name' => 'required',
-            'department' => 'required'
+            'dept_id' => 'required'
         ]);
 
-        $courses = Course::create([
-            'course_name'=> $request->course_name,
-            'department'=> $request->department,
-
+        Course::create([
+            'course_name' => $request->course_name,
+            'dept_id' => $request->dept_id
         ]);
 
+        // $courses = Course::create([
+        //     'course_name'=> $request->course_name,
+        //     'dept_id'=> $request->dept,
+
+        // ]);
         return redirect()->route('course.index')->with('message', 'Course has been saved!');
     }
 

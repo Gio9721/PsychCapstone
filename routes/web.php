@@ -92,13 +92,15 @@ Route::get('/exams_history', function () {
     return view('admin.users.councilour.exams_history');
 });
 Route::get('/addstudent', function(){
-    return view('admin.users.addstudent');
+    $course = App\Course::all();
+    return view('admin.users.addstudent', ['course' => $course]);
 });
 Route::get('/addcouncilor', function(){
     return view('admin.users.addcouncilor');
 });
 Route::get('/addcourse', function(){
-    return view('admin.users.addcourse');
+    $depts = App\Department::all();
+    return view('admin.users.addcourse', ['depts' => $depts]);
 });
 Route::get('/course', function(){
     return view('admin.users.course');

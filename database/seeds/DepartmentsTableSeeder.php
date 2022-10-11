@@ -13,7 +13,13 @@ class DepartmentsTableSeeder extends Seeder
     public function run()
     {
         DB::table('departments')->insert([
-            'name' => 'School of Arts and Sciences(SAS)',
+            'name' => 'Department of Computer and Information Sciences(DCIS)',
+        ]);
+        DB::table('departments')->insert([
+            'name' => 'Department of Computer Engineering(DE)',
+        ]);
+        DB::table('departments')->insert([
+            'name' => 'Department of Civil Engineering(DE)',
         ]);
     }
 }
