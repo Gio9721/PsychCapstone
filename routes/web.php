@@ -109,13 +109,13 @@ Route::get('/course', function(){
 Route::get('/dash', function(){
     return view('admin.users.dash');
 });
+Route::post('/addcouncilor','Admin\UserController@makecounselour')->name('addcouncilor');
 Route::resource('course', CourseController::class);
 Route::resource('user', Admin\UserController::class);
 
 Auth::routes();
 
 // Admin //
-Route::post('/index','Admin\UserController@create')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/account/activate/{token}', 'AccountController@activate');
 Route::get('/index', function(){

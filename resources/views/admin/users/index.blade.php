@@ -133,7 +133,7 @@
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="course" >{{ __('Course') }}</label>
                                         <select class="form-select" id="course" name="course">
-                                            <option value="{{$user->course_id}}">{{$user->course_id == $courses->course_name}}</option>
+                                            
                                             @foreach ($courses as $course)
                                             <option value="{{$course->id}}">{{$course->course_name}}</option>
                                             @endforeach

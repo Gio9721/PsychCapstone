@@ -36,7 +36,7 @@
             <div class="container">
                 <div class="formcard">
                     <div class="card-body">
-                        <form method="PUT" id="addaccount" action="{{ route('user.create')}}">
+                        <form method="POST" id="addaccount" action="{{ route('addcouncilor')}}">
                                                 @csrf
                         <div class="row">
                             <div class="col-8 col-sm-6">
@@ -53,7 +53,7 @@
                                     <input type="text" id="lname" name="lname" placeholder="Last Name" class="form-control">
                                 </div>
                                 <div class="input-group mb-3">
-                                    <input type="text" id="role_name" name="role_name" value="councilor" class="form-control" hidden>
+                                    <input type="text" id="year" name="year" value="0" class="form-control" hidden>
                                 </div>
                             </div>
                             <div class="col-4 col-sm-6">
