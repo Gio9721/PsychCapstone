@@ -42,7 +42,6 @@
                             <div class="col-8 col-sm-6">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">First Name</span>
-                                    <input type="text" id="fname" name="fname" value="First Name" class="form-control">
                                     <input type="text" id="fname" name="fname" placeholder="First Name" class="form-control">
                                 </div>
                                 <div class="input-group mb-3">
@@ -55,7 +54,7 @@
                                 </div>
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="course" >{{ __('Course') }}</label>
-                                        <select class="form-select" id="course" name="course">
+                                        <select class="form-select" id="course" name="course_id">
                                             <option>Choose Course</option>
                                             @foreach ($course as $courses)
                                                 <option value="{{$courses->id}}">{{$courses->course_name}}</option>

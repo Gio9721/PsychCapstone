@@ -33,7 +33,7 @@ class UserController extends Controller
         'fname'=>'required',
         'mname'=>'required',
         'lname'=>'required',
-        'course'=>'required',
+        'course_id'=>'nullable',
         'year'=>'required',
         'email'=>'required|email',
         'password'=>'required',
@@ -44,7 +44,7 @@ class UserController extends Controller
         'fname'=> $request->fname,
         'mname'=> $request->mname,
         'lname'=> $request->lname,
-        'course'=> $request->course,
+        'course_id'=> $request->course_id,
         'year'=> $request->year,
         'email'=> $request->email,
         'password'=>bcrypt($request->password)
@@ -52,14 +52,44 @@ class UserController extends Controller
     ]);
 
     if ($request->has('role')){
-        $user->assignRole($request->role['role_name']);
+        $user->assignRole($request->role['name']);
     }
 
-    if ($request->has('permissions')){
-        $user->givePermissionTo(collect($request->permissions)->pluck('id')->toArray());
-    }
-    // return response(['message'=>'User Created', 'user'=>$user]);
-    return redirect()->route('admin.users.index')->with('success','Student Added');
+public function makecounselour(Request $request)
+    {
+    $request->validate([
+        'idnum'=>'required',
+        'fname'=>'required',
+        'mname'=>'required',
+        'lname'=>'required',
+        'course_id'=>'nullable',
+        'year'=>'required',
+        'email'=>'required|email',
+        'password'=>'required',
+
+    ]);
+    $user = User::create([
+        'idnum'=> $request->idnum,
+        'fname'=> $request->fname,
+        'mname'=> $request->mname,
+        'lname'=> $request->lname,
+        'course_id'=> $request->course_id,
+        'year'=> $request->year,
+        'email'=> $request->email,
+        'password'=>bcrypt($request->password)
+
+    ]);
+
+    // if ($request->has('role')){
+    //     $user->assignRole($request->role['name']);
+    // }
+
+    // if ($request->has('permissions')){
+    //     $user->givePermissionTo(collect($request->permissions)->pluck('id')->toArray());
+    // }
+    $role = Role::select('id')->where('name', 'councilour')->first();
+    $user->roles()->attach($role);
+    return redirect()->route('admin.users.index')->with('success','Counselour Added');
 
 }
 
