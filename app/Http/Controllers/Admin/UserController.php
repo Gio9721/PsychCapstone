@@ -52,7 +52,7 @@ class UserController extends Controller
     ]);
 
     if ($request->has('role')){
-        $user->assignRole($request->role['name']);
+        $user->assignRole($request->role['role_name']);
     }
 
     if ($request->has('permissions')){
@@ -75,7 +75,7 @@ class UserController extends Controller
             return redirect()->route('admin.users.index')->with('warning', 'You are not allowed to edit yourself.');
         }
 
-        return view('admin.users.edit')->with(['user'=>User::find($id), 'roles'=>Role::all()]);
+        return view('admin.users.edit')->with(['user'=>User::find($id)]);
     }
 
     /**

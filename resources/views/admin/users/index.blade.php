@@ -12,7 +12,7 @@
                         <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Manage Accounts
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-wrap:wrap">
                             <a class="dropdown-item" href="{{ route('admin.users.index') }}">List of Accounts</a>
                             <a class="dropdown-item" href="{{ url('addcouncilor') }}">Add Councilor</a>
                           <a class="dropdown-item" href="{{ url('addstudent') }}">Add Student</a>
@@ -60,7 +60,7 @@
                                         <td>{{ $user->idnum }}</td>
                                         <td>{{ $user->lname }}</td>
                                         <td>{{ $user->fname }}</td>
-                                        <td>{{ $user->course }}</td>
+                                        <td>{{ $user->roles }}</td>
                                         <td>
                                             <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-id="{{$user->id}}" data-bs-target="#viewModal">
                                                 <i class="fa fa-eye"></i>
@@ -133,7 +133,7 @@
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="course" >{{ __('Course') }}</label>
                                         <select class="form-select" id="course" name="course">
-                                            <option value="{{$user->course_id}}">{{$user->course_id == $courses->course_name}}</option>
+                                            <option value="{{$user->course_id}}"></option>
                                             @foreach ($courses as $course)
                                             <option value="{{$course->id}}">{{$course->course_name}}</option>
                                             @endforeach

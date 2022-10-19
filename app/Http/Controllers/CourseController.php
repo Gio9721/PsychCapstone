@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Department;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,8 +17,8 @@ class CourseController extends Controller
     public function index()
     {
         $course = Course::all();
-
-        return view('admin.users.course', compact('course'));
+        $dept = Department::all();
+        return view('admin.users.course', compact('course', 'dept'));
     }
 
     /**
