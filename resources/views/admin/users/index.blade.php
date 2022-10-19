@@ -12,7 +12,7 @@
                         <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Manage Accounts
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-wrap:wrap">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ route('admin.users.index') }}">List of Accounts</a>
                             <a class="dropdown-item" href="{{ url('addcouncilor') }}">Add Councilor</a>
                           <a class="dropdown-item" href="{{ url('addstudent') }}">Add Student</a>
@@ -31,7 +31,21 @@
                       </div>
                 </li>
                 <li>
-                    <input type="text" id="search"class="form-control" placeholder="search" style="width: 15rem"/>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ Auth::user()->fname }} <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                      </div>
                 </li>
             </ul>
         </header>
@@ -133,7 +147,7 @@
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="course" >{{ __('Course') }}</label>
                                         <select class="form-select" id="course" name="course">
-                                            <option value="{{$user->course_id}}">{{$user->course_id == $courses->course_name}}</option>
+                                            {{-- <option value="{{$user->course_id}}">{{$user->course_id == $courses->course_name}}</option> --}}
                                             @foreach ($courses as $course)
                                             <option value="{{$course->id}}">{{$course->course_name}}</option>
                                             @endforeach

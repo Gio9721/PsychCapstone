@@ -29,13 +29,30 @@
                         </div>
                       </div>
                 </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ Auth::user()->fname }} <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                      </div>
+                </li>
             </ul>
         </header>
             @include('partials.alerts')
             <div class="container text-center">
                 <div class="row justify-content-center mt-5 pt-5">
                     <div class="col-4">
-                        <div class="card border-info bg-info text-center mb-3" style="max-width: 25rem;">
+                        <div class="card border-success bg-success text-center mb-3" style="max-width: 25rem;">
                             <div class="card-header text-success">
                                 <h3>Accounts</h3>
                             </div>
@@ -45,7 +62,7 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card border-info bg-info text-center mb-3" style="max-width: 25rem;">
+                        <div class="card border-success bg-success text-center mb-3" style="max-width: 25rem;">
                             <div class="card-header text-success">
                                 <h3>Courses</h3>
                             </div>
@@ -55,7 +72,7 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card border-info bg-info text-center mb-3" style="max-width: 25rem;">
+                        <div class="card border-success bg-success text-center mb-3" style="max-width: 25rem;">
                             <div class="card-header text-success">
                                 <h3>Approved Appointments</h3>
                             </div>
